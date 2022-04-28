@@ -8,11 +8,15 @@ class PyMongoPaginate():
         self.page_size = page_size
 
     def paginate(self) -> dict:
-        skips = (self.page_size * (self.page - 1))
-        query = self.query.skip(skips).limit(self.page_size)
+        """
+        Paginate for pymongo queries
+        """
 
         if self.page == 0:
             self.page = 1 
+
+        skips = (self.page_size * (self.page - 1))
+        query = self.query.skip(skips).limit(self.page_size)
 
         clonedCursor = self.query.clone()
         countItems = len([x for x in clonedCursor])
@@ -21,7 +25,7 @@ class PyMongoPaginate():
         
         if self.page_size > 0:
             if countItems == 0:
-                pageCount = 0
+                pageCount = 1
             else:
                 pageCount = (countDocuments / countItems)
         else:
