@@ -11,13 +11,19 @@ class PyMongoPaginate():
         skips = (self.page_size * (self.page - 1))
         query = self.query.skip(skips).limit(self.page_size)
 
+        if self.page == 0:
+            self.page = 1 
+
         clonedCursor = self.query.clone()
         countItems = len([x for x in clonedCursor])
         countDocuments = clonedCursor.collection.count_documents({})
         pageCount = 0
         
         if self.page_size > 0:
-            pageCount = (countDocuments / countItems)
+            if countItems == 0:
+                pageCount = 0
+            else:
+                pageCount = (countDocuments / countItems)
         else:
             pageCount = (countDocuments / self.page_size)
 
