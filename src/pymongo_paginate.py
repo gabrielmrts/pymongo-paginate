@@ -24,12 +24,12 @@ class PyMongoPaginate():
         pageCount = 0
         
         if self.page_size > 0:
+            pageCount = (countDocuments / self.page_size)
+        else:
             if countItems == 0:
                 pageCount = 1
             else:
                 pageCount = (countDocuments / countItems)
-        else:
-            pageCount = (countDocuments / self.page_size)
 
         return {
             "page": self.page,

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pymongo-paginate",                     # This is the name of the package
-    version="1.4",                        # The initial release version
+    version="1.5",                        # The initial release version
     author="Gabriel Martins",                     # Full name of the author
     description="Package to paginate pymongo queries",
     long_description=long_description,      # Long description read from the the readme file
