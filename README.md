@@ -1,11 +1,6 @@
 # Pymongo Paginate
 
-> Paginate pymongo queries can be simple
-
-![GitHub repo size](https://img.shields.io/github/repo-size/gabrielmrts/pymongo-paginate?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/gabrielmrts/pymongo-paginate?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/gabrielmrts/pymongo-paginate?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/gabrielmrts/pymongo-paginate?style=for-the-badge)
+> author: github.com/gabrielmrts/
 
 ## Example
 
